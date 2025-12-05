@@ -1,0 +1,71 @@
+---
+const { title, description, icon } = Astro.props;
+---
+
+<div class="skill-card">
+  {icon && <div class="skill-icon">{icon}</div>}
+  <h3>{title}</h3>
+  <p>{description}</p>
+</div>
+
+<style>
+  .skill-card {
+    background-color: var(--color-surface);
+    border: 2px solid var(--color-border);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .skill-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: var(--transition);
+  }
+
+  .skill-card:hover {
+    border-color: var(--color-accent);
+    box-shadow: 0 8px 24px rgba(136, 136, 204, 0.1);
+    transform: translateY(-4px);
+  }
+
+  .skill-card:hover::before {
+    transform: scaleX(1);
+  }
+
+  .skill-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    min-height: 3rem;
+  }
+
+  .skill-card h3 {
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
+  }
+
+  .skill-card p {
+    font-size: 0.95rem;
+    color: var(--color-text-light);
+  }
+
+  @media (max-width: 768px) {
+    .skill-card {
+      padding: 1.5rem;
+    }
+
+    .skill-icon {
+      font-size: 2rem;
+    }
+  }
+</style>
