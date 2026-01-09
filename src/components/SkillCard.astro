@@ -1,9 +1,17 @@
 ---
-const { title, description, icon } = Astro.props;
+import { SquareCode, ScrollText, Atom, TabletSmartphone, Frame, UserSearch, BookOpen, Puzzle, ToolCase, Zap, Link, BookCheck } from '@lucide/astro';
+
+const { title, description, ...props } = Astro.props;
+
+console.log(props.icon); 
 ---
 
 <div class="skill-card">
-  {icon && <div class="skill-icon">{icon}</div>}
+  <div class="skill-icon">
+    {typeof props.icon === "function" && <props.icon class="icon" size={50} />}
+  </div>
+  <!-- {icon && <div class="skill-icon">{icon}</div>} -->
+  <!-- {typeof props.icon === "function" ? <props.icon /> : <div class="skill-icon">{props.icon}</div>} -->
   <h3>{title}</h3>
   <p>{description}</p>
 </div>
@@ -64,8 +72,9 @@ const { title, description, icon } = Astro.props;
       padding: 1.5rem;
     }
 
-    .skill-icon {
-      font-size: 2rem;
-    }
+    /* .skill-icon .icon {
+      width: 2rem;
+      height: 2rem;
+    } */
   }
 </style>

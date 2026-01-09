@@ -5,8 +5,8 @@ export default defineConfig({
   integrations: [],
   vite: {
     plugins: [tailwindcss()],
-    ssr: {
-      external: ['node-fetch']
-    }
+    // ssr: {
+    //   external: ['node-fetch']
+    // }
   }
 });
