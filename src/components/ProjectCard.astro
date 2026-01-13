@@ -1,0 +1,86 @@
+---
+const { title, description, image, tags, link } = Astro.props;
+---
+
+<a href={link || "#"} class="project-card" target={link ? "_blank" : "_self"} rel={link ? "noopener noreferrer" : ""}>
+  <div class="project-image" style={`background-image: url('${image}')`}></div>
+  <div class="project-content">
+    <h3>{title}</h3>
+    <p>{description}</p>
+    <div class="project-tags">
+      {tags.map((tag) => (
+        <span class="tag">{tag}</span>
+      ))}
+    </div>
+  </div>
+</a>
+
+<style>
+  .project-card {
+    display: block;
+    background-color: var(--color-surface);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: var(--transition);
+    cursor: pointer;
+    text-decoration: none;
+    border: 1px solid var(--color-border);
+  }
+
+  .project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 32px rgba(136, 136, 204, 0.15);
+    border-color: var(--color-primary);
+  }
+
+  .project-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    transition: var(--transition);
+  }
+
+  .project-card:hover .project-image {
+    transform: scale(1.05);
+  }
+
+  .project-content {
+    padding: 1.5rem;
+  }
+
+  .project-card h3 {
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
+  }
+
+  .project-card p {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .tag {
+    display: inline-block;
+    background-color: var(--color-bg);
+    color: var(--color-accent);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+
+  @media (max-width: 768px) {
+    .project-image {
+      height: 150px;
+    }
+
+    .project-content {
+      padding: 1rem;
+    }
+  }
+</style>
