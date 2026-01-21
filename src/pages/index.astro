@@ -41,7 +41,7 @@ import "../styles/global.css";
       <h2>{portfolio.about.title}</h2>
       <div class="about-content">
         {portfolio.about.content.map((paragraph) => (
-          <p>{paragraph}</p>
+          <p set:html={paragraph}></p>
         ))}
       </div>
     </div>
@@ -183,7 +183,7 @@ import "../styles/global.css";
 
   /* About Section */
   .about-content {
-    max-width: 800px;
+    max-width: 1200px;
     margin-top: 2rem;
   }
 
@@ -192,6 +192,7 @@ import "../styles/global.css";
     line-height: 1.8;
     margin-bottom: 1.5rem;
     color: var(--color-text-light);
+    text-align: justify;
   }
 
   /* Skills Section */

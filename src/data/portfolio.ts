@@ -3,19 +3,19 @@ import { SquareCode, ScrollText, Atom, TabletSmartphone, Frame, UserSearch, Book
 export const portfolio = {
   name: "Angela's Portfolio",
   title: "Frontend Developer & UI/UX Designer",
-  tagline: "Crafting digital experiences that are both beautiful and functional.",
+  tagline: "Dedicated to the art of seamless UI and fluid user journeys.",
   email: "angelacoleenacebedo@gmail.com",
 
   hero: {
     heading: "Hello World, I'm Angela Coleen Acebedo!",
-    subheading: "I design and build elegant web experiences.",
+    subheading: "Building the web, one pixel and line of code at a time.",
     cta: "Explore My Work",
   },
 
   about: {
     title: "About Me",
     content: [
-      "Lorem ipsum dolor sit amet",
+      "I am <strong>Angela Acebedo</strong>, an aspiring <strong>frontend developer</strong>. Throughout the years I have studied code in high school and college, I have gained experience in quite a handful of languages such as <strong>Java, Python, C++, C#, Javascript, and Typescript</strong>. Whenever I can, I go back to review these languages while also wanting to explore what else can I learn about them. I have also gained experience in certain tools and technologies such as <strong>MySQL, Tailwind CSS, and React</strong>. Even if some of these languages and technologies belong in the backend, I want to learn and pursue frontend development first and foremost before pursuing backend.",
     ],
   },
 
